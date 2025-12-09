@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Project Embrace | Victoria NHS</title>
+
+<style>
+    body {
+        margin: 0;
+        font-family: "Poppins", sans-serif;
+        background: #000;
+        color: #f0f0f0;
+        scroll-behavior: smooth;
+    }
+
+    /* NAV BAR */
+    nav {
+        width: 100%;
+        padding: 18px 60px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background: rgba(0, 0, 0, 0.85);
+        position: fixed;
+        top: 0;
+        backdrop-filter: blur(10px);
+        z-index: 999;
+        border-bottom: 1px solid #333;
+    }
+    nav .logo {
+        font-size: 28px;
+        font-weight: 700;
+        color: #8bae66;
+        letter-spacing: 1px;
+    }
+    nav ul {
+        display: flex;
+        gap: 35px;
+        list-style: none;
+    }
+    nav ul li a {
+        text-decoration: none;
+        color: white;
+        transition: .3s;
+        font-size: 17px;
+        font-weight: 500;
+    }
+    nav ul li a:hover {
+        color: #8bae66;
+    }
+
+    /* HERO COVER */
+    .hero {
+        margin-top: 100px;
+        height: 90vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        text-align: center;
+        padding: 20px;
+    }
+
+    /* IMAGE CLEAN, SHARP, NOT BLURRED */
+    .hero img {
+        width: 80%;
+        max-width: 1300px;
+        border-radius: 20px;
+        filter: brightness(1.08) contrast(1.05); /* Cleaner, not blurred */
+        box-shadow: 0 15px 40px rgba(0,0,0,0.7);
+        animation: fadeIn 1.5s ease;
+    }
+
+    .hero h1 {
+        margin-top: 30px;
+        font-size: 62px;
+        color: #8bae66;
+        font-weight: 800;
+        line-height: 1.1;
+        text-shadow: 0 5px 18px black;
+        animation: fadeUp 1.2s ease;
+    }
+
+    .subtext {
+        margin-top: 10px;
+        font-size: 20px;
+        max-width: 800px;
+        opacity: .85;
+    }
+
+    /* CTA BUTTON */
+    .cta-btn {
+        margin-top: 25px;
+        padding: 15px 38px;
+        background: #8bae66;
+        border: none;
+        color: black;
+        border-radius: 10px;
+        cursor: pointer;
+        font-size: 18px;
+        font-weight: bold;
+        transition: 0.3s;
+    }
+    .cta-btn:hover {
+        background: white;
+        transform: scale(1.05);
+    }
+
+    /* SECTIONS */
+    .section {
+        padding: 90px 70px;
+        animation: fadeIn 1.2s ease;
+    }
+    .section h2 {
+        font-size: 45px;
+        color: #8bae66;
+        margin-bottom: 15px;
+        font-weight: 700;
+    }
+    .section p {
+        font-size: 19px;
+        max-width: 950px;
+        line-height: 1.8;
+        opacity: .9;
+    }
+
+    /* PROGRAM CARDS */
+    .program-cards {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+        gap: 35px;
+        margin-top: 50px;
+    }
+    .card {
+        background: #111;
+        padding: 30px;
+        border-radius: 14px;
+        border: 1px solid #8bae66;
+        text-align: center;
+        transition: 0.3s;
+        box-shadow: 0 8px 25px rgba(0,0,0,0.5);
+    }
+    .card h3 {
+        font-size: 24px;
+        margin-bottom: 15px;
+        color: #8bae66;
+    }
+    .card p {
+        font-size: 17px;
+        opacity: .85;
+    }
+    .card:hover {
+        transform: translateY(-10px);
+        background: #161616;
+    }
+
+    /* TEAM GRID */
+    .team-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+        gap: 30px;
+        margin-top: 40px;
+    }
+    .team-member {
+        background: #101010;
+        padding: 25px;
+        border-radius: 12px;
+        border: 1px solid #8bae66;
+        text-align: center;
+        transition: 0.3s;
+        box-shadow: 0 6px 20px rgba(0,0,0,0.4);
+    }
+    .team-member h3 {
+        color: #8bae66;
+        font-size: 22px;
+        margin-bottom: 10px;
+    }
+    .team-member p {
+        opacity: .75;
+        font-size: 16px;
+    }
+    .team-member:hover {
+        transform: scale(1.06);
+        background: #161616;
+    }
+
+    /* FOOTER */
+    footer {
+        text-align: center;
+        padding: 25px;
+        background: #0d0d0d;
+        border-top: 1px solid #222;
+        margin-top: 50px;
+        color: #888;
+        font-size: 15px;
+    }
+
+    /* ANIMATIONS */
+    @keyframes fadeUp {
+        from { opacity: 0; transform: translateY(40px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes fadeIn {
+        from { opacity: 0; }
+        to { opacity: 1; }
+    }
+
+</style>
+</head>
+
+<body>
+
+<!-- NAV -->
+<nav>
+    <div class="logo">Project Embrace</div>
+    <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#program">Programs</a></li>
+        <li><a href="#team">Team</a></li>
+    </ul>
+</nav>
+
+<!-- COVER SECTION -->
+<section class="hero" id="home">
+    <img src="viccover.jpg" alt="VNHS Cover Photo">
+    <h1>EMBRACE</h1>
+    <div class="subtext"></div>
+
+    <button class="cta-btn" onclick="document.getElementById('about').scrollIntoView({behavior:'smooth'})">
+        Explore Project Embrace
+    </button>
+</section>
+
+<!-- ABOUT -->
+<section class="section" id="about">
+    <h2>About Project Embrace</h2>
+    <p>
+        Project Embrace is the official school innovation program of Victoria National High School.
+        It aims to foster a supportive, inclusive, and nurturing learning environment that empowers learners
+        academically, emotionally, and socially. The project unifies the school community—teachers,
+        students, parents, and stakeholders—in building programs that enhance performance, promote
+        well-being, and strengthen community involvement.
+    </p>
+</section>
+
+<!-- PROGRAMS -->
+<section class="section" id="program">
+    <h2>Programs</h2>
+
+    <div class="program-cards">
+        <div class="card">
+            <h3>Academic Support</h3>
+            <p>Focused interventions designed to strengthen learner competencies, mastery, and performance.</p>
+        </div>
+
+        <div class="card">
+            <h3>Well-being & Guidance</h3>
+            <p>Programs that nurture emotional resilience, mental health, and student welfare.</p>
+        </div>
+
+        <div class="card">
+            <h3>Community Engagement</h3>
+            <p>Partnerships and collaborative activities that connect the school with the wider community.</p>
+        </div>
+
+        <div class="card">
+            <h3>Leadership & Innovation</h3>
+            <p>Training and activities that develop future-ready, socially responsible school leaders.</p>
+        </div>
+    </div>
+</section>
+
+<!-- TEAM -->
+<section class="section" id="team">
+    <h2>Project Embrace Team</h2>
+
+    <div class="team-grid">
+        <div class="team-member">
+            <h3>Project Coordinator</h3>
+            <p>Oversees implementation and ensures alignment with school goals.</p>
+        </div>
+
+        <div class="team-member">
+            <h3>Teachers</h3>
+            <p>Facilitate learning, mentorship, and program execution.</p>
+        </div>
+
+        <div class="team-member">
+            <h3>Guidance Staff</h3>
+            <p>Provide emotional and psychological support to learners.</p>
+        </div>
+
+        <div class="team-member">
+            <h3>School Head</h3>
+            <p>Leads and approves innovation initiatives under Project Embrace.</p>
+        </div>
+    </div>
+</section>
+
+<footer>
+    © 2025 Victoria National High School – Project Embrace | All Rights Reserved
+</footer>
+
+</body>
+</html>
